@@ -1,0 +1,16 @@
+.cheesbox {
+    display: grid;
+    grid-template: repeat(5,1fr) / repeat(5,1fr) ;
+    width: 500px;
+    height: 500px;
+
+}
+
+.cheesbox > div {
+    border: 1px solid black;
+}
+
+.cheesbox > div:nth-child(odd){
+    background-color: red;
+  
+}
