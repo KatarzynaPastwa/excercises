@@ -1,0 +1,65 @@
+
+
+body {  
+    background: #f0f0f0;
+    width: 1200px;
+    max-width: 100%;
+    margin: 1em auto;
+    padding: 1em;
+    text-align: center;
+
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+} 
+
+.main {
+    display: grid;
+    grid-template: repeat(12,100px) / repeat(8,100px) ;
+    grid-gap: 5px;
+    width: 1200px;
+    height: 800px;
+}
+
+.main > div {
+    border: 1px solid black;
+    font-size: 40px;
+}
+
+
+.foto{
+   
+    background-color: rgb(199, 184, 184);
+    grid-area: 1 / 1 / 9 / 4;
+}
+.name{
+  
+    background-color: rgb(109, 109, 109);
+    grid-area: 1 / 4 / 3 / 9;
+}
+
+.cit{
+   
+    background-color: black;
+    color: white;
+    border-radius: 250px;
+    grid-area: 3 / 4 / 8 / 9;
+}
+.about-me{
+    
+    background-color: rgb(121, 121, 199);
+    grid-area: 1 / 9 / 3 / 13;
+}
+.projects{
+   
+    background-color: rgb(38, 48, 58);
+    grid-area: 3 / 9 / 7 / 13;
+}
+.contact{
+  
+    grid-area: 7 / 9 / 9 / 13;
+    background-color: rgb(47, 52, 70);
+}
+
