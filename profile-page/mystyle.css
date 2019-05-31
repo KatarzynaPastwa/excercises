@@ -25,9 +25,13 @@ body {
 
 .main > div {
     border: 1px solid black;
-    font-size: 40px;
 }
 
+
+.main > div p{
+    font-size: 35px;
+    text-transform: uppercase;
+}
 
 .foto{
    
@@ -47,15 +51,52 @@ body {
     border-radius: 250px;
     grid-area: 3 / 4 / 8 / 9;
 }
+
+
+/* SEKCJA ABOUT-ME */
 .about-me{
     
     background-color: rgb(121, 121, 199);
     grid-area: 1 / 9 / 3 / 13;
 }
+.about-me a {
+    display: flex;
+    flex-flow: column;
+    min-height: 80px;
+    margin: 5px;
+    background-color: rgb(199, 184, 184);
+    border: 3px solid black;
+    justify-items: flex-end;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+.about-me a:hover{
+    background-color: rgb(134, 128, 128);
+}
+/* SEKCJA PROJEKTY */
+
 .projects{
    
     background-color: rgb(38, 48, 58);
     grid-area: 3 / 9 / 7 / 13;
+}
+.projects a {
+    display: flex;
+    flex-flow: column;
+    min-height: 80px;
+    margin: 5px;
+    background-color: rgb(199, 184, 184);
+    border: 3px solid black;
+    justify-items: flex-end;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+.projects a:hover{
+    background-color: rgb(134, 128, 128);
 }
 .contact{
   
