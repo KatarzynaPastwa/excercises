@@ -1,106 +1,147 @@
-
-
 body {  
-    background: #f0f0f0;
-    width: 1200px;
+    background: #222629;
+    width: 1000px;
     max-width: 100%;
     margin: 1em auto;
     padding: 1em;
     text-align: center;
-
 }
 
 * {
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-} 
-
-.main {
-    display: grid;
-    grid-template: repeat(12,100px) / repeat(8,100px) ;
-    grid-gap: 5px;
-    width: 1200px;
-    height: 800px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-.main > div {
-    border: 1px solid black;
+nav{
+    display: flex;
+    justify-content: flex-end
 }
+    nav a{
+        color: #86c232;
+        text-transform: uppercase;
+        margin-left: 20px;
+        margin-right: 10px;
+    }
 
-
-.main > div p{
-    font-size: 35px;
-    text-transform: uppercase;
-}
-
-.foto{
+section{
+    display:  flex;
+    flex-flow: column;
    
-    background-color: rgb(199, 184, 184);
-    grid-area: 1 / 1 / 9 / 4;
-}
-.name{
-  
-    background-color: rgb(109, 109, 109);
-    grid-area: 1 / 4 / 3 / 9;
 }
 
-.cit{
-   
-    background-color: black;
-    color: white;
-    border-radius: 250px;
-    grid-area: 3 / 4 / 8 / 9;
+hr{
+    border: 2px solid #86c232;
 }
+.main{
+    display: flex;
+    flex-flow: row;
+    max-width: 100%;
 
+}  
+    .box-left{
+        background-color:#474B4F ;
+        color: #474B4F;
+        justify-content: space-between;
+        height: 600px;
+        width: 25%;
+        max-width: 220px;
+        margin: 10px;
 
-/* SEKCJA ABOUT-ME */
-.about-me{
+    }
+        .box-left img{
+            position: relative;
+        }
+
+    .box-right{
+        background-color: #474B4F;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        height: 600px;
+        width: 75%;
+        margin:10px;
     
-    background-color: rgb(121, 121, 199);
-    grid-area: 1 / 9 / 3 / 13;
-}
-.about-me a {
-    display: flex;
-    flex-flow: column;
-    min-height: 80px;
-    margin: 5px;
-    background-color: rgb(199, 184, 184);
-    border: 3px solid black;
-    justify-items: flex-end;
-    font-size: 25px;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-}
-.about-me a:hover{
-    background-color: rgb(134, 128, 128);
-}
-/* SEKCJA PROJEKTY */
-
-.projects{
-   
-    background-color: rgb(38, 48, 58);
-    grid-area: 3 / 9 / 7 / 13;
-}
-.projects a {
-    display: flex;
-    flex-flow: column;
-    min-height: 80px;
-    margin: 5px;
-    background-color: rgb(199, 184, 184);
-    border: 3px solid black;
-    justify-items: flex-end;
-    font-size: 25px;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-}
-.projects a:hover{
-    background-color: rgb(134, 128, 128);
-}
-.contact{
+    }
+        .home{
+            background-color: white; 
+            font-size: 20px;          
+            min-height: 10%;
+            margin: 5%;  
+          
+        }
   
-    grid-area: 7 / 9 / 9 / 13;
-    background-color: rgb(47, 52, 70);
-}
 
+
+        .cit{
+            background-color: white; 
+            font-size: 16px;  
+            font-weight: lighter;
+            width: 300px;
+            height: 300px;
+            border-radius: 150px;
+            margin: 0 auto; 
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            margin-bottom: 50px;
+         
+        }
+
+            .cit p{
+         
+            }
+
+
+.box-projects{
+    color: #86c232;
+    display: flex;
+   flex-flow:column;
+    height: auto;
+    }
+
+    .projects-main{
+        display: flex;
+        flex-flow: row;
+    }
+
+    .projects-main div{
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        margin: 5px;
+       
+    }
+
+    .projects-main h2{
+        font-size: 25px;
+        text-transform: uppercase;
+        
+    }
+
+    
+    .projects-main a{
+        background-color: #61892F;
+        color: #222629;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        width: 300px;
+    }
+
+    .projects-main p{
+        background-color: #6b6e70;
+        color: #222629;
+        font-size: 18px;
+        width: 300px;
+        height: 500px;
+    }
+
+.box-contact{
+    color: #86c232;
+
+    }
+    
+    .box-contact h2{
+        font-size: 25px;
+        text-transform: uppercase;
+    }
