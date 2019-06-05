@@ -43,10 +43,13 @@ function("HTML") //true
  - wartość przyjętego parametru jest różna od słowa JavaScript
  */
 
+var par="string";
 
-function word(x){
-    if ( )
-}
+function word(par){
+
+    if( par != "JavaScript"){
+    return true}
+};
 
 
 
