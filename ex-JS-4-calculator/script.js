@@ -1,8 +1,20 @@
 let display = document.getElementById('display');
 display.disabled=true;
 
+            // dodanie eventu do displaya, nie zadzial ajak bedzie zablokowany display
+
+            display.addEventListener('click', (event) =>{
+                
+                alert('hello')
+            })
+
+
 let operators = document.getElementsByClassName('operator');
 operators = Array.from(operators)
+
+
+
+// CYFRY I OPERACJE NA CYFRACH
 
 let numbers = document.getElementsByTagName('button')   //do zmiennej numbers przypisuje wszystkei typy buttony
 numbers = Array.from(numbers).filter((value) => {       // no zmiennej numbers przypisuje tablice 
@@ -34,6 +46,7 @@ function addElement(element, text, target){                 // tworzymy jedna fu
     let HTMLElement = document.createElement(element)
     HTMLElement.innerText = text
     target.after(HTMLElement)
+    return HTMLElement
 }        
 
    //  wykorzystanie tej funkcji:  wywoluje funckie: nazwafunkcji (typ np. 'button', z jaką nazwą np. '.', gdzie(zmienna) , np. zeroButton)
@@ -47,10 +60,10 @@ acButton.innerHTML = 'AC'
 
 let displayParent = display.parentElement
 
-        //displayParent.append(acButton)   ---> teraz wyswietlioby mi sie drugi raz AC na przysisku
+        displayParent.append(acButton)   //---> teraz wyswietlioby mi sie drugi raz AC na przysisku
 
 
-        // let body = display.parentElement.parentElement //body
+        let body = display.parentElement.parentElement //body
 
 
 // ROBIENIE IKROPKI
@@ -68,3 +81,21 @@ let lastRowButton = document.firstElementChild.lastElementChild.children[4];
 let zeroButton =lastRowButton.firstElementChild;
 // zeroButton.after(dotButton) // ---> to samoco ponizsze, ale latfwiej ALE nie dziala na wszytskich przegladarkach, ta samo dziąła before
 lastRowButton.insertBefore(dotButton, zeroButton.nextElementSibling) // teraz kropka jest meidzy 0 a + ale nei ma spacji
+
+
+
+numbers.forEach((button) => {                               //dla każdego z tablicy numbers, typ button i robi sie dla niego funkcja
+    button.addEventListener('click', () => {                   //
+        const number = event.target.innerText
+        display.value=display.value + number
+    })
+
+})
+
+acButton.addEventListener('click', (event) => {
+    display.value = ''
+}) 
+
+
+
+
