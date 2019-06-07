@@ -29,3 +29,31 @@ let divs = Array.from(document.firstElementChild.children[1].children).filter(el
 
 divs[4].lastElementChild.previousElementSibling
 
+
+// Creating AC button
+
+
+let acButton = document.createElement('button')
+acButton.innerHTML = 'AC'
+
+let displayParent = display.parentElement
+
+        //displayParent.append(acButton)   ---> teraz wyswietlioby mi sie drugi raz AC na przysisku
+
+
+        // let body = display.parentElement.parentElement //body
+
+
+// ROBIENIE IKROPKI
+
+
+let dotButton = document.createElement('button')
+dotButton.innerHTML = '.'
+
+let lastRowButton = document.firstElementChild.lastElementChild.children[4];
+
+
+// lastRowButton.append(dot) --- > doda mi kropkę na końcu
+
+let zeroButton =lastRowButton.firstElementChild;
+lastRowButton.insertBefore(dotButton, zeroButton.nextElementSibling) // teraz kropka jest meidzy 0 a + ale nei ma spacji
