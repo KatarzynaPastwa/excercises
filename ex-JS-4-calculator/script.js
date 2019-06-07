@@ -29,6 +29,15 @@ let divs = Array.from(document.firstElementChild.children[1].children).filter(el
 
 divs[4].lastElementChild.previousElementSibling
 
+        //dotanie elmentu     
+function addElement(element, text, target){                 // tworzymy jedna funkcje i potem ją wykorzystujemy 
+    let HTMLElement = document.createElement(element)
+    HTMLElement.innerText = text
+    target.after(HTMLElement)
+}        
+
+   //  wykorzystanie tej funkcji:  wywoluje funckie: nazwafunkcji (typ np. 'button', z jaką nazwą np. '.', gdzie(zmienna) , np. zeroButton)
+
 
 // Creating AC button
 
@@ -57,5 +66,5 @@ let lastRowButton = document.firstElementChild.lastElementChild.children[4];
 // lastRowButton.append(dot) --- > doda mi kropkę na końcu
 
 let zeroButton =lastRowButton.firstElementChild;
-zeroButton.after(dotButton) // ---> to samoco ponizsze, ale latfwiej ALE nie dziala na wszytskich przegladarkach, ta samo dziąła before
-// lastRowButton.insertBefore(dotButton, zeroButton.nextElementSibling) // teraz kropka jest meidzy 0 a + ale nei ma spacji
+// zeroButton.after(dotButton) // ---> to samoco ponizsze, ale latfwiej ALE nie dziala na wszytskich przegladarkach, ta samo dziąła before
+lastRowButton.insertBefore(dotButton, zeroButton.nextElementSibling) // teraz kropka jest meidzy 0 a + ale nei ma spacji
