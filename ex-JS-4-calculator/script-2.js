@@ -1,8 +1,9 @@
-
 let display = document.getElementById("display")
 display.disabled = true
 
-let operators = document.getElementsByClassName("operator")
+// let operators = document.getElementsByClassName("operator")
+let operators = document.querySelectorAll('.operator')
+const o = document.querySelector('.operator')
 operators = Array.from(operators)
 
 let buttons = document.getElementsByTagName('button')
@@ -44,14 +45,15 @@ let dotButton = addElement('button', '.', zeroButton)
 
 numbers.forEach((button) => {
   button.addEventListener('click', (event) => {
+    event.stopPropagation()
     const number = event.target.innerText
     display.value = display.value + number
   })
 })
 
-
 operators.forEach((operator) => {
-  operator.addEventListener('click', () => {
+  const listener = (event) => {
+    event.stopPropagation()
     const operator = event.target.innerText
     const displayValue = display.value
     const arrayOfOperators = ['+', '-', '/', '*']
@@ -68,12 +70,15 @@ operators.forEach((operator) => {
     } else {
       display.value = display.value + ' ' + operator + ' '
     }
-  })
+  }
+  operator.addEventListener('click', listener)
 })
 
 acButton.addEventListener('click', (event) => {
- display.value = ''
+  display.value = ''
 })
 
-
-
+let body = document.querySelector('body')
+body.addEventListener('click', () => {
+  body.classList.toggle('light-background-color')
+})
