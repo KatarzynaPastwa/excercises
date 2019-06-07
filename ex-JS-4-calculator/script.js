@@ -53,7 +53,9 @@ dotButton.innerHTML = '.'
 let lastRowButton = document.firstElementChild.lastElementChild.children[4];
 
 
+
 // lastRowButton.append(dot) --- > doda mi kropkę na końcu
 
 let zeroButton =lastRowButton.firstElementChild;
-lastRowButton.insertBefore(dotButton, zeroButton.nextElementSibling) // teraz kropka jest meidzy 0 a + ale nei ma spacji
+zeroButton.after(dotButton) // ---> to samoco ponizsze, ale latfwiej ALE nie dziala na wszytskich przegladarkach, ta samo dziąła before
+// lastRowButton.insertBefore(dotButton, zeroButton.nextElementSibling) // teraz kropka jest meidzy 0 a + ale nei ma spacji
