@@ -57,8 +57,15 @@ function word(par){
 /* TODO.5: Napisz funkcję isShopOpen, która przyjmuje jako parametr liczbę i zwraca true jeśli:
  - wartość parametru jest mniejsza niż 23 i większa od 6
  */
-
-
+var hour = 8;
+function isShopOpen(){
+ 
+    if(hour>6  ){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 
 
@@ -66,8 +73,17 @@ function word(par){
     - która zwraca true, jeśli sklep jest zamknięty (czyli neguje wartość zwróconą z isShopOpen)
  */
 
+function isShopClosed(){
+    if (isShopOpen()){
+        return false;
+    }else{
+        return true;
+    }
+}
 
+function isShopClosed(){
 
+}
 
 
 
@@ -78,6 +94,37 @@ function word(par){
  - w przypadku jeśli case nie pasuje do żadnego przypadku, to funkcja ma wyświetlić w konsoli tekst: "Taki dzień nie istnieje!";
  */
 
+var day;
+switch (day) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case  6:
+    day = "Saturday";
+}
+
+
+function whatDay () {if (day === 'Monday' || day === 'Tuesday' || day === 'Wednesday' || day === 'Thursday' || day === 'Friday' || day === 'Saturday' || day === 'Sunday'){
+    console.log('Today is ' + day)
+} else{
+    console.log('This day is not exist ')
+}}
+
 
 
 
@@ -87,3 +134,13 @@ function word(par){
     - przypisz do zmiennej price wartość: '2.00$' jeśli isMember = true a jeśli nie to '10.00$';
         czy
   */
+
+  var price= '2.00$'
+  var isMember=true
+  function entrance(){
+      if (isMember){
+          console.log('The entrance is', price)
+      }else{
+          console.log('Sorry, Your not a member, ticket price for You is 10$')
+      }
+  }
