@@ -58,8 +58,9 @@ setInterval(() => {
     resetGame()
   }
   cleanCanvas()
-  drawSnake()
+  drawScore()
   drawFood()
+  drawSnake()
 }, 300)
 
 body.addEventListener('keydown', event => {
@@ -138,3 +139,10 @@ function resetGame () {
   createFood()
 }
 
+function drawScore () {
+  ctx.fillStyle = '#ddd'
+  ctx.font = '120px Arial'
+  ctx.textAlign = 'center'
+  ctx.textBaseline = 'middle'
+  ctx.fillText((snake.length - 3) * 10, 10 * SIZE, 10 * SIZE, 500)
+}
