@@ -38,13 +38,24 @@ snake.forEach(part =>{
 
 let dx = 1;
 let dy = 0;
+let food;
 
 function moveSnake(){
-    head=snake[0]
-    let lastPart = snake.pop()
-    lastPart.x = head.x + SIZE * dx
-    lastPart.y = head.y + SIZE * dy
-    snake.unshift(lastPart)  
+
+   const head={
+       x: snake[0].x + SIZE * dx,
+       y: snake[0].y + SIZE * dy
+   }
+
+    snake.unshift(head)
+
+    if (food.x === head.x && food.y===head.y){
+        createFood()
+    }else{
+        snake.pop()
+    }
+
+
 }
 
 function cleanCanvas(){
@@ -58,11 +69,23 @@ function drawSnake(){
 }
 
 
+function drawFood(){
+    drawRect(food.x, food.y, SIZE, SIZE, 'red')
+}
+
+
+
+createFood()
+
+
+
+
 setInterval(() => {
 
     moveSnake()
     cleanCanvas()
     drawSnake()
+    drawFood()
 
 },300
 )
@@ -92,4 +115,34 @@ body.addEventListener('keydown', event =>{
     }
 
 })
+
+
+function randomNumber(min, max){
+    return Math.round( (Math.random() * (max-min) + min ) / SIZE) *SIZE;
+}
+
+
+
+function createFood(){
+
+    const x =randomNumber(0,600-SIZE)
+    const y =randomNumber(0,600-SIZE)
+
+    const canDrawFood = !snake.some(part => {
+        return part.x === x  && part.y === y
+    })
+
+    if (!canDrawFood){
+        createFood()
+    }
+
+    food={
+        x,
+        y
+    }
+   
+
+}
+
+
 
