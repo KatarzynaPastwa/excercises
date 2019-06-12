@@ -1,4 +1,3 @@
-// const canvas = document.getElementById('snake-game')
 const SIZE = 30
 
 const body = document.querySelector('body')
@@ -20,6 +19,8 @@ let snake
 let dx
 let dy
 let food
+let intervalId
+let timeout = 300
 
 function moveSnake() {
   const head = {
@@ -31,6 +32,7 @@ function moveSnake() {
 
   if (food.x === head.x && food.y === head.y) {
     createFood()
+    loop()
   } else {
     snake.pop()
   }
@@ -51,17 +53,7 @@ function drawFood() {
 }
 
 resetGame()
-
-setInterval(() => {
-  moveSnake()
-  if (collision()) {
-    resetGame()
-  }
-  cleanCanvas()
-  drawScore()
-  drawFood()
-  drawSnake()
-}, 300)
+loop()
 
 body.addEventListener('keydown', event => {
   const isMovingRight = dx === 1 && dy === 0
@@ -87,6 +79,23 @@ body.addEventListener('keydown', event => {
 
 function randomNumber(min, max) {
   return Math.round((Math.random() * (max-min) + min) / SIZE) * SIZE;
+}
+
+function loop () {
+  if (intervalId !== undefined) {
+    timeout -= 10
+    clearInterval(intervalId)
+  }
+  intervalId = setInterval(() => {
+    moveSnake()
+    if (collision()) {
+      resetGame()
+    }
+    cleanCanvas()
+    drawScore()
+    drawFood()
+    drawSnake()
+  }, timeout)
 }
 
 
@@ -135,6 +144,8 @@ function resetGame () {
 
   dx = 1
   dy = 0
+
+  timeout = 300
 
   createFood()
 }
