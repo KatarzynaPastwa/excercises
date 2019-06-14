@@ -110,6 +110,39 @@ console.log(tablica)
 
 
 
+var x
+var y
+    function isEven() {
+       x = Math.round(Math.random()*20);  
+      if (x%2 === 0 && x>=6 ){
+        //console.log(x, "jest parzyste")
+       return x
+      }else{
+        isEven()
+      } 
+    }
+
+    isEven()
+ 
+var tablica =[]
+
+
+function zrobTablice(){
+
+  for(var i=0; i<x; i++){
+  y=Math.round(Math.random()*100);  
+  tablica.push(y)
+  //console.log(tablica)
+  }
+
+}
+zrobTablice()
+
+var nowaTablica = tablica.slice(1,5);
+console.log(nowaTablica)
+
+
+
 
 
 // TODO: 7. odszukaj index 9 w tablicy [1,2,3,4,5,6,7,8,9,10]
@@ -122,3 +155,13 @@ console.log(tablica.indexOf('9'))
 
 // TODO: 8. stworz funkcje, ktora rekursywnie policzy do n
 // n ma byc parametrem tej funkcji
+
+
+
+ ???????
+var n
+function liczy(n){
+  for(i=0; i <= n; i++){
+    console.log(i)
+  }
+}
