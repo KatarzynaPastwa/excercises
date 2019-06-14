@@ -5,12 +5,10 @@ function randomNumber (min, max) {
   return (Math.random() * (max-min) + min)
 }
 
-function Particle (x, y, color = "white") {
+function Particle (x, y) {
   this.initX = x
   this.initY = y
   this.reset()
-  this.r = 25
-  this.color = color
   this.life = 100
 }
 
@@ -79,12 +77,24 @@ Lab.prototype = {
     this.clearCanvas()
   },
   simulate: function(time) {
-    this.particles[0].move()
+
     this.clearCanvas()
-    this.particles[0].draw(this.context)
-    if (this.isOutOfLab(this.particles[0])) {
-      this.particles[0].reset()
+    this.particles.forEach(particle => {
+    particle.move()
+    particle.draw(this.context)
+    if (this.isOutOfLab(particle)){
+        particle.reset()
     }
+
+    })
+
+
+   //this.particles[0].move()
+   
+   //this.particles[0].draw(this.context)
+   // if (this.isOutOfLab(this.particles[0])) {
+     // this.particles[0].reset()
+    //}
     requestAnimationFrame(this.simulate.bind(this))
   },
   isOutOfLab: function(particle) {
@@ -96,11 +106,11 @@ Lab.prototype = {
   }
 }
 
-const lab = new Lab(600, 500, "#ddd", 2)
+const lab = new Lab(600, 500, "#ddd", 100)
 lab.simulate()
 
 const lab2 = new Lab(300, 300, "#999", 1)
 lab2.simulate()
 
 
-//setInterval(lab.simulate(), 3000);
+
