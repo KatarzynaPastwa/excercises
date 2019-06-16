@@ -58,10 +58,46 @@ var drinks = [
  { name: 'Bacardi', price: 35.50, isExpensive: true },
  { name: 'Vine', price: 16.50,  isExpensive: false } */
 
+
+ drinks.forEach(function(drink){
+  if(drink.price > 30 ){
+    drink.isExpensive = true
+      
+  } else{
+    drink.isExpensive = false
+  }
+})
+
+
 /* TODO.7: Za pomocą pętli, wyświetl w konsoli nazwe drinka:
  - którego cena jest równa 50.20, a po wyświetleniu console.log przerwij natychmiast pętlę */
+
+
+ drinks.forEach(function(drink){
+while(drink.price=== 50.20){
+  console.log(drink.name)
+  break;
+}
+  
+})
+
+
 
 /* TODO.8: Za pomocą pętli, wyświetl w konsoli następujacy tekst:
     - "Cena _NAME_ wynosi _PRICE_"
     - przeskocz powyższy console.log jeśli cena jest równa 3.20 lub 19.99
  */   
+
+
+
+drinks.forEach(function(drink){
+  
+  
+    if(drink.price !== 3.20 && drink.price !== 19.99){
+      
+    
+     console.log(`Cena ${drink.name} wynosi ${drink.price}`)
+    
+    }
+    
+  })
