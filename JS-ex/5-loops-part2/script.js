@@ -34,9 +34,22 @@ var drinks = [
 
 /* TODO.3: Za pomocą pętli, wyświetl w konsoli nazwy drinków, których:
  - nazwa ma więcej niż 4 litery */
+ drinks.forEach(function(drink){
+  if(drink.name.length > 4){
+      console.log(drink.name)
+  }
+})
+
 
 /* TODO.4: Za pomocą pętli, wyświetl w konsoli nazwy drinków, których:
  - nazwa zaczyna się na literkę "B" lub na literkę "V" */
+
+ drinks.forEach(function(drink){
+  if(drink.name[0] === "B" || drink.name[0] === "V" ){
+      console.log(drink.name)
+  }
+})
+
 
 /* TODO.6: Za pomocą pętli, doklej do każdego drinka pole:
  - isExpensive: true jeśli cena jest wyższa niż 30
