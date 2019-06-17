@@ -10,6 +10,14 @@ TODO: 1. Napisz funkcje, która zwraca losową całkowitą liczbę, w zadanym za
  -----------------------------------------------------
  CODE GOES BELOW */
 
+function getRandomValue(min,max){
+  
+var x = Math.round(Math.random()*(max-min)+ min)
+  console.log(x)
+ 
+}
+
+
 /*
  -----------------------------------------------------
 TODO: 2. Napisz funkcję, która jako parametr przyjmuje Twoje imię i nazwisko,
@@ -17,6 +25,17 @@ TODO: 2. Napisz funkcję, która jako parametr przyjmuje Twoje imię i nazwisko,
  e.g getInitials("John Doe") - zwraca "J.D."
  -----------------------------------------------------
  CODE GOES BELOW */
+
+
+function initials(fullName){
+  var fullNameArray=fullName.split(" ");
+  const [name, surname]=fullNameArray;
+  console.log(`${name[0]}.${surname[0]}.`)
+}
+
+
+
+
 
 /*
  -----------------------------------------------------
