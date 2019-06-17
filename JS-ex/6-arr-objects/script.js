@@ -1,155 +1,88 @@
-/* 1.TODO: Stwórz obiekt o nazwie superman, który posiada następujące właściwości:
-- właściwość canFly o wartości true
-- właściwość strength o wartości 80
-- właściwość speed o wartości 300
-- właściwość city o wartości 'Metropolis'
-- właściwość alterEgo o wartości 'Clark Kent'
-- właściwość isImmortal o wartości true
-- właściwość origin o wartości 'Krypton'
-- metodę sayRealName która zwraca stringa 'I am Clark Kent from Krypton!' wypisane wielkimi literami, użyj właściwość
-  origin oraz alterEgo!
-- metodę setStrength, która przymuje parametr z nową wartością strength i nadpisze obecna
-    wartość strength (tak zwany setter)
-- metodę kick, która zwraca wartość strength przemnożoną razy 1.2
-- metodę punch, która zwraca wartość strength przemnożoną razy 0.7
-- metodę combo, która sumuje wartości zwrócone przez metody kick i punch (musisz zawołać te metody)
-- metodę isFastHero która zwraca true lub false, w zależności czy właściwość speed jest większa od 250
-Następnie:
-    1) odczytaj propercje canFly, strength i alterEgo.
-    2) usuń propercję city
-    3) nadpisz wartość strength na dwa sposoby - za pomocą użycia metody setStrength oraz bezpośrednio modyfikując wartość superman.strength = xxx
-    4) Zawołaj metody kick, punch, combo, isFastHero na obiekcie superman i upewnij się czy zwracają dobre wartości
-*/
+/*====================================================
+ OBJECT & ARRAY - GETTING VALUES
+ ====================================================*/
 
-var superman={
-  canFly: true,
-  strength: 80,
-  speed: 300,
-  city: 'Metropolis',
-  alterEgo: 'Clark Kent',
-  isImmortal: true,
-  origin: 'Krypton',
+// TODO: 1. Wyświetl w konsoli wartości elementów tablicy skills
+var skills = [
+  'JavaScript', // 0
+  'HTML', // 1
+  'CSS' // 2
+  // 3
+];
+//// Dodanie nowego elementu na ostatniej pozycji - dwie metody:
+// skills[skills.length] = 'C#';
+// skills.push('c#');
 
-  sayRealName: function sayRealName (){
-                sentence =  (`I am ${this.alterEgo} from ${this.origin}!`)           
-                var upperCaseSentence = sentence.toUpperCase()  
-                return upperCaseSentence
-                },
+// TODO: 2. Wyświetl w konsoli liczbę elementów w powyższej tablicy skills
 
-  setStrength:  function setStrength(){
-                return this.strength=400;
-                },
+// TODO: 3. Wyświetl w konsoli wartości pól name / year / isDamaged z obiektu car
+var car = {
+    name: 'Mazda',
+    year: 1998,
+    isDamaged: true
+};
 
-  kick:   function kick(){
-          this.strength *=1.2;
-          return this.strength
-          },
+// TODO: 4. Do tablicy users, dopisz dwóch dodatkowych userów
+var users = [
+    {login: 'John', password: 'h4x'},
+    {login: 'Johhny', password: 'lubie_placki'},
+];
 
-  punch: function punch(){
-          this.strength *=0.7
-          return this.strength
-        },
+// TODO 4.a) Wyświetl w konsoli login i password usera na indeksie "2" w tablicy users
 
-  combo: function combo(){
-       return this.kick() + this.punch()
+/* TODO 4.b) Napisz funkcję, która jako prametr przyjmuje obiekt user i zwraca stringa:
+ - "USER CREDENTIALS ARE: LOGIN_USERA : PASSWORD_USERA" */
 
-  },
+// TODO: 5. Wyśwetl w konsoli tablicę z frameworkami developera
+var developer = {
+    name: 'John Doe',
+    city: 'Gdansk',
+    otherInfo: {
+        skills: {
+            frameworks: ['Angular', 'React', 'Vue'],
+            tools: ['Webstorm', 'Gulp', 'GIT']
+        }
+    }
+};
 
-  isFastHero: function(){
-              if(this.speed > 250){
-                return true
-              }else{
-                return false
-              }
-               }
+// TODO: 6. Wyśwetl w konsoli tablicę z frameworkami drugiego developera
+var developers = [
+    {
+        name: 'John Doe',
+        otherInfo: {
+            skills: {
+                frameworks: ['Angular', 'React', 'Vue'],
+                tools: ['Webstorm', 'Gulp', 'GIT']
+            }
+        }
+    },
+    {
+        name: 'John Doe',
+        otherInfo: {
+            skills: {
+                frameworks: ['Angular', 'React', 'Vue'],
+                tools: ['Webstorm', 'Gulp', 'GIT']
+            }
+        }
+    }
+];
 
-}
-
-
-console.log(superman.canFly, superman.strength, superman.alterEgo)
-delete superman.city
-superman.stregth=300;
-
-superman.sayRealName()
-superman.setStrength()
-superman.kick()
-superman.punch()
-superman.combo()
-superman.isFastHero()
-
-
-
-
-
-
-/* 2. TODO: Skopiuj powyższy przykład i podmień klucze tak, aby powstał obiekt Batman, zmień mnożniki w metodzie kick i punch */
-
-var batman={
-  canFly: true,
-  strength: 80,
-  speed: 340,
-  city: 'Metropolis',
-  alterEgo: 'Batman',
-  isImmortal: true,
-  origin: 'New York',
-
-  sayRealName: function sayRealName (){
-                sentence =  (`I am ${this.alterEgo} from ${this.origin}!`)           
-                var upperCaseSentence = sentence.toUpperCase()  
-                return upperCaseSentence
-                },
-
-  setStrength:  function setStrength(){
-                return this.strength=390;
-                },
-
-  kick:   function kick(){
-          this.strength *=1.25;
-          return this.strength
-          },
-
-  punch: function punch(){
-          this.strength *=0.65
-          return this.strength
-        },
-
-  combo: function combo(){
-       return this.kick() + this.punch()
-
-  },
-
-  isFastHero: function(){
-              if(this.speed > 250){
-                return true
-              }else{
-                return false
-              }
-               }
-
-}
-
-
-
-
-batman.sayRealName()
-batman.setStrength()
-batman.kick()
-batman.punch()
-batman.combo()
-batman.isFastHero()
-
-
-
-/* 3. TODO: Stocz walkę bohaterów!
-Napisz funkcję isBatmanStronger, w której sięgniesz po obu bohaterów.
-Funkcja zwraca true jeśli jego wartość zwrócona w metodzie COMBO dla Batmana
-ma większą wartość niż COMBO dla Supermana
-*/
-
-function isBatmanStrong(){
-  if (batman.combo > superman.combo){
-    return true
-  }else{
-    return false
-  }
-  }
+// TODO: 7. Wyświetl w konsoli kolejno wszystkie firmy w jakich pracował drugi pracownik tablicy workers
+var workers = [
+    {
+        name: 'John',
+        experience: [
+            { years: '1998-2004', company: 'Google' },
+            { years: '2004-2011', company: 'Microsoft' },
+            { years: '2012-2015', company: 'Facebook' }
+        ]
+    },
+    {
+        name: 'Samanta',
+        experience: [
+            { years: '1998-2008', company: 'Infoshare' },
+            { years: '2010-2014', company: 'Amazon' },
+            { years: '2014-2017', company: 'Intel' }
+        ]
+    }
+];
