@@ -11,9 +11,20 @@ var powers = {
     strength: 200
 };
 
+
+var supermanWithPowers = Object.assign({}, superman, powers)
+
 /* 2. Puść pętlę po obiekcie supermanWithPowers i wyświetl w konsoli klucze oraz wartości.*/
+
+
+
+
+
 /* 3. Z użyciem Object.keys stwórz tablicę o nazwie supermanKeys, która trzyma klucze obiektu
-supermanWithPowers
+supermanWithPowers */
+
+var supermanKeys=Object.keys(supermanWithPowers)
+
 /* 4. Podepnij z CDN bibliotekę lodash w pliku index.html. Wykorzystaj metodę isEqual, do sprwadzenia czy obiekty
   woman i man mają te same wartości
  */
