@@ -25,7 +25,7 @@ var h;
 var j;
 
 // TODO: 6. Zadeklaruj zmienna typu null
-
+var k=null;
 
 
 // TODO: 7. Zadeklaruj tablicę zawierajacą zmienne typu string

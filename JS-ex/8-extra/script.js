@@ -49,7 +49,13 @@ TODO: 3. Napisz funkcję, która jako parametry przyjmuje dwa stringi.
  -----------------------------------------------------
  CODE GOES BELOW */
 
-
+let sentence = "kurde, co za dzień";
+let word = "kurde";
+var newSentence;
+function cenzura(sentence, word){
+  newSentence = sentence.replace(word, "*******");
+  console.log(newSentence)
+}
 
 
 

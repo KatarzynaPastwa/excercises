@@ -77,10 +77,14 @@ console.log(number)
 
 // TODO: 4. stwórz liste 100 losowych liczb (programistycznie)
 // poza petla zrob console log calej tablicy
+let number;
+let numbers=[];
 
-
-
-
+for(let i=0; i<100; i++){
+  number= Math.random();
+  numbers.push(number)
+}
+console.log(numbers)
 
 
 // TODO: 5. Stworz tablice z 5 liczbami (od 1 do 5)

@@ -16,6 +16,11 @@ var supermanWithPowers = Object.assign({}, superman, powers)
 
 /* 2. Puść pętlę po obiekcie supermanWithPowers i wyświetl w konsoli klucze oraz wartości.*/
 
+var supTab=Object.keys(supermanWithPowers)
+for(let i=0; i<supTab.length;i++){
+  console.log(supTab[i])
+}
+
 
 
 
