@@ -58,7 +58,3 @@ var germanNeighbours=countries.filter(function(country){
 
 // 9. TODO: Sprawdź, czy wszystkie kraje mają populację powyżej 50 tys.
 
-var countriesPopulation=countries.filter(function(country){
-    if ( country.population > 50000){       
-    } 
-    });
