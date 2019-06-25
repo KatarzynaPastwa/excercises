@@ -12,14 +12,10 @@ var list2 = [
 
 
 
-function countLanguages(list1) {
+function countLanguages(list) {
 
-  
+  return list.every(user => user.language === list[0].language);
  
 }
-
-countLanguages(list1)
-
-
-
+ 
 
