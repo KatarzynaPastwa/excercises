@@ -23,15 +23,43 @@ var list3 = [
 ];
 
 
-
 function findSenior(list) {
-  var ageOfUsers=list.map(function(user){
-    return user.age;
-  })
-
-
+  
+  return list.filter(user=>user.age === list.reduce(function(a,b){return a.age > b.age ? a : b}).age);
 }
 
 
 
-console.log(ageOfUsers.max())
+
+////////PONIŻSZE ZŁE /////////
+
+function findSenior(list) {
+  list.sort((a, b) => (a.age> b.age) ? 1 : -1).reverse()
+  const result=list.map(user => user.age === list[0].age)
+ return result
+}
+
+
+
+function findSenior(list) {
+  list.sort((a, b) => (a.age> b.age) ? 1 : -1).reverse()
+  var najstarszy = list.some( function(user) {   
+    if(user.age === list[0].age){
+      var tab =[]
+      tab=tab.concat(tab,user )    
+     return tab
+    }
+  }) 
+console.log(najstarszy)
+}
+
+
+const inventory = [
+  {name: 'apples', quantity: 2},
+  {name: 'bananas', quantity: 0},
+  {name: 'cherries', quantity: 5}
+];
+
+const result = inventory.find( fruit => fruit.name === 'cherries' );
+
+console.log(result) // { name: 'cherries', quantity: 5 }
