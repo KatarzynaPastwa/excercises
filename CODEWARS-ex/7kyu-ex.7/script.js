@@ -28,9 +28,10 @@ function findSenior(list) {
   var ageOfUsers=list.map(function(user){
     return user.age;
   })
-  
-console.log(Math.max(ageOfUsers))
+
+
 }
 
 
 
+console.log(ageOfUsers.max())
